@@ -37,6 +37,17 @@ RUN userdel -r yoctouser && \
         /usr/bin/restrict_useradd.sh && \
     echo "#include /etc/sudoers.usersetup" >> /etc/sudoers
 
+#Timesys
+RUN \
+  apt-get update && apt-get install -y automake binutils-dev bison build-essential bzip2 ecj fastjar flex gawk gconf2 \
+    gettext gperf groff gtk-doc-tools guile-1.8 icon-naming-utils indent libc6-dev libdbus-glib-1-dev \
+    libexpat1-dev libglade2-dev libgmp3-dev libgtk2.0-bin libgtk2.0-dev libmpfr-dev libncurses5-dev \
+    libperl-dev libsdl1.2-dev libtool libusb-dev libxml-parser-perl lzop python-dev python-libxml2 ruby \
+    scons sharutils swig texinfo texlive-extra-utils texlive-latex3 unzip wget x11-xkb-utils xfonts-utils zip zlib1g \
+    lib32ncurses5 lib32z1 lib32z1-dev libc6-dev-i386 && \
+    echo "dash dash/sh boolean false" | debconf-set-selections && \
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+
 USER usersetup
 ENV LANG=en_US.UTF-8
 
