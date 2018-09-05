@@ -46,7 +46,8 @@ RUN \
     scons sharutils swig texinfo texlive-extra-utils texlive-latex3 unzip wget x11-xkb-utils xfonts-utils zip zlib1g \
     lib32ncurses5 lib32z1 lib32z1-dev libc6-dev-i386 && \
     echo "dash dash/sh boolean false" | debconf-set-selections && \
-    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash && \
+    apt-get install -y libarchive-zip-perl
 
 USER usersetup
 ENV LANG=en_US.UTF-8
