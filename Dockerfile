@@ -61,6 +61,9 @@ RUN \
     mercurial automake groff curl lzop asciidoc u-boot-tools dos2unix mtd-utils pv \
     libncurses5 libncurses5-dev libncursesw5-dev libelf-dev zlib1g-dev
 
+RUN \
+  apt-get install icecc
+
 USER usersetup
 ENV LANG=en_US.UTF-8
 
