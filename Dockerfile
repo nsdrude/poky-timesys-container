@@ -52,7 +52,7 @@ RUN \
 #Poky IMX6 - Sumo
 #Per: http://variwiki.com/index.php?title=Yocto_Build_Release&release=RELEASE_SUMO_V1.0_VAR-SOM-MX6
 RUN \
-  apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+  apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
     xz-utils debianutils iputils-ping libsdl1.2-dev xterm \
     autoconf libtool libglib2.0-dev libarchive-dev python-git \
@@ -67,7 +67,7 @@ RUN \
   git config --global url."https://".insteadOf git://
 
 RUN \
-  apt-get install icecc
+  apt-get install -y icecc
 
 USER usersetup
 ENV LANG=en_US.UTF-8
