@@ -61,6 +61,11 @@ RUN \
     mercurial automake groff curl lzop asciidoc u-boot-tools dos2unix mtd-utils pv \
     libncurses5 libncurses5-dev libncursesw5-dev libelf-dev zlib1g-dev
 
+#Use HTTP instead of GIT to avoid firewall problems
+RUN \
+  git config --global url."https://github.com/".insteadOf git@github.com: && \
+  git config --global url."https://".insteadOf git://
+
 RUN \
   apt-get install icecc
 
