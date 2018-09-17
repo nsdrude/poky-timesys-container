@@ -62,6 +62,11 @@ RUN \
     libncurses5 libncurses5-dev libncursesw5-dev libelf-dev zlib1g-dev
 
 RUN \
+  git config --global url."http://git.yoctoproject.org/git".insteadOf git://git.yoctoproject.org && \
+  git config --global url."https://github.com/".insteadOf git@github.com: && \
+  git config --global url."https://".insteadOf git://
+
+RUN \
   apt-get install -y icecc
 
 USER usersetup
