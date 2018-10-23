@@ -72,6 +72,10 @@ RUN \
 #RUN \
 #  apt-get install -y icecc
 
+#For xxd
+RUN \
+ apt-get install -y vim-common
+
 USER usersetup
 ENV LANG=en_US.UTF-8
 
