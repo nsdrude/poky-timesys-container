@@ -44,7 +44,7 @@ point.
     to run a container for the first time would be:
 
     ```
-    docker run --rm -it -v /home/myuser/mystuff:/workdir crops/poky --workdir=/workdir
+    docker run --rm -it -v /home/myuser/mystuff:/workdir -v ~/.ssh:/home/pokyuser/.ssh -v ~/.qt-license:/home/pokyuser/.qt-license nsdrude/poky-timesys-container --workdir=/workdir
     ```
     
   * **Windows/Mac**
