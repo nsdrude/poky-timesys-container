@@ -77,11 +77,11 @@ RUN \
  apt-get install -y vim-common
 
 #Samsung Artik
-#https://developer.artik.io/documentation/developer-guide/multimedia/qt5.html
+#https://developer.artik.io/documentation/developer-guide/multimedia/qt5-530.html
 RUN \
- apt-get install -y qemu-user-static git gcc-arm-linux-gnueabihf \
- g++-arm-linux-gnueabihf gcc-aarch64-linux-gnu g++-aarch64-linux-gnu weston \
- qt5-default gperf bison libdbus-1-dev libfreetype6-dev
+ apt-get install -y qemu-user-static git g++-5-arm-linux-gnueabihf \
+ gcc-5-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
+ gcc-arm-linux-gnueabihf libc6-dev-i386 gperf qt5-default
 
 USER usersetup
 ENV LANG=en_US.UTF-8
