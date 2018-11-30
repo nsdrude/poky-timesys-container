@@ -77,16 +77,16 @@ RUN \
  apt-get install -y vim-common
 
 #Samsung Artik
-#1. Add qt5 build dependencies
-RUN \
-sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list \
-apt-get update \
-apt-get build-dep qt5-default
-#2. Other dependencies per https://developer.artik.io/documentation/developer-guide/multimedia/qt5-530.html
+#Per https://developer.artik.io/documentation/developer-guide/multimedia/qt5-530.html
 RUN \
  apt-get install -y qemu-user-static git g++-5-arm-linux-gnueabihf \
  gcc-5-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
- gcc-arm-linux-gnueabihf libc6-dev-i386 gperf
+ gcc-arm-linux-gnueabihf libc6-dev-i386 gperf qt5-default
+#Per https://github.com/SamsungARTIK/build-artik/tree/A710s-OS-18.05.00
+RUN \
+sudo apt-get install -y \
+kpartx u-boot-tools gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu \
+device-tree-compiler android-tools-fsutils curl
 
 USER usersetup
 ENV LANG=en_US.UTF-8
