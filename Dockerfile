@@ -86,7 +86,7 @@ RUN \
 RUN \
 sudo apt-get install -y \
 kpartx u-boot-tools gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu \
-device-tree-compiler android-tools-fsutils curl
+device-tree-compiler android-tools-fsutils curl bc
 
 USER usersetup
 ENV LANG=en_US.UTF-8
