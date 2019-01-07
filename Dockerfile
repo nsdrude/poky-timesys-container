@@ -76,13 +76,10 @@ RUN \
 RUN \
  apt-get install -y vim-common
 
-#Samsung Artik
-#Per https://developer.artik.io/documentation/developer-guide/multimedia/qt5-530.html
-RUN \
- apt-get install -y qemu-user-static git g++-5-arm-linux-gnueabihf \
- gcc-5-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf \
- gcc-arm-linux-gnueabihf libc6-dev-i386 gperf qt5-default
-#Per https://github.com/SamsungARTIK/build-artik/tree/A710s-OS-18.05.00
+#Atmel A5
+apt-get install -y \
+gcc-arm-linux-gnueabi
+
 RUN \
 sudo apt-get install -y \
 kpartx u-boot-tools gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu \
