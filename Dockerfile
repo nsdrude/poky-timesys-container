@@ -77,6 +77,7 @@ RUN \
  apt-get install -y vim-common
 
 #Atmel A5
+RUN \
 apt-get install -y \
 gcc-arm-linux-gnueabi
 
